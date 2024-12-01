@@ -46,7 +46,7 @@ TEMPLATE = '''
 
 
 
-
+#获取buvid3 buvid4
 @app.route('/fetch_buvid3',methods=['GET', 'POST'])
 def fetch_buvid3():
     # API URL
@@ -62,7 +62,7 @@ def fetch_buvid3():
 
 
 
-
+#显示 哔哩哔哩视频数据内容
 @app.route('/bilibili-video-data')
 def bilibili_video_data():
     # 读取Excel文件
@@ -75,6 +75,8 @@ def bilibili_video_data():
     return render_template_string(TEMPLATE, data=data)
 def decode_key(input_str):
     return "".join(chr(ord(c) - 1) for c in input_str)
+
+
 # 定义获取代理的函数
 def fetch_proxies():
     # API接口地址
@@ -95,6 +97,7 @@ def fetch_proxies():
     }
     return proxies
 
+#删除new_BVID.json 内的bvid
 @app.route('/delete_bvid', methods=['GET', 'POST'])
 def delete_bvid():
     bvid = None
@@ -197,7 +200,7 @@ def start_fetch_proxies():
 
 
 
-
+#获取账号主页信息
 @app.route('/Get_Bili_name', methods=['POST', 'GET'])
 def Get_Bili_name():
     """
@@ -257,7 +260,7 @@ def Get_Bili_name():
 
 
 
-
+#普通三连
 @app.route('/Bili_San_Lian', methods=['POST','GET'])
 def Bili_San_Lian():
     """
@@ -325,7 +328,7 @@ def Bili_San_Lian():
 
 
 
-
+#Token_San_Lian
 @app.route('/Bili_Token_San_Lian', methods=['POST', 'GET'])
 def Bili_Token_San_Lian():
     # 从请求中获取参数
@@ -371,7 +374,7 @@ def Bili_Token_San_Lian():
 
 
 
-
+#获取的json文件
 @app.route('/Get_new_json/<flienm>', methods=['POST', 'GET'])
 def Get_new_json(flienm):
     """
@@ -409,7 +412,7 @@ def Get_new_json(flienm):
 
 
 
-
+#获取w_rid
 @app.route('/generate_w_rid', methods=['POST','GET'])
 def generate_w_rid():
     """
@@ -435,7 +438,7 @@ def generate_w_rid():
 
 
 
-
+#查找关键字视频列表
 @app.route('/find_video', methods=['POST', 'GET'])
 def find_video():
     # 初始化参数
@@ -528,7 +531,7 @@ def find_video():
 
 
 
-
+#更新Cookies信息
 @app.route('/update_cookies', methods=['POST','GET'])
 def update_cookies(cookies_folder='Cookies', cookies_json='Cookies.json'):
     """
@@ -584,7 +587,7 @@ def update_cookies(cookies_folder='Cookies', cookies_json='Cookies.json'):
 
 
 
-
+#获取new_BVID.json内视频数据并生成xsl文件
 @app.route('/Get_video_shuju', methods=['POST','GET'])
 def Get_video_shuju():
     Cookie_ID = 0
@@ -694,7 +697,7 @@ def write_bvid (BVID,file_path='new_BVID.json'):
 
 
 
-
+#获取json格式的代理ip
 @app.route('/ip_json', methods=['POST', 'GET'])
 def ip_json():
     GET_IP_rq = GET_IP()
