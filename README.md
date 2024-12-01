@@ -10,7 +10,7 @@
 - http://124.221.28.167:8080/update_cookies
 - 进入这个网址就会更新Cookies.json
 ### 查询视频数据:
-- http://124.221.28.167:8080//Get_video_shuju
+- http://124.221.28.167:8080/Get_video_shuju
 - 进入这个网址网页加载完成就获取完毕了(需要等待很长时间)
 - 不需要一直刷新点进去一次就行了
 - http://124.221.28.167:8080/bilibili-video-data
